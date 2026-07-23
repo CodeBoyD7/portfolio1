@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --ink: oklch(96% 0.014 88);
+  --muted: oklch(75% 0.032 82);
+  --soft: oklch(65% 0.035 105);
+  --paper: oklch(15% 0.022 94);
+  --paper-deep: oklch(10% 0.022 102);
+  --panel: oklch(19% 0.028 88);
+  --panel-strong: oklch(24% 0.038 82);
+  --line: oklch(34% 0.032 84);
+  --amber: oklch(78% 0.158 77);
+  --cyan: oklch(78% 0.122 198);
+  --clay: oklch(59% 0.142 37);
+  --green: oklch(71% 0.132 145);
+  --shadow: 0 24px 70px oklch(3% 0.02 90 / 48%);
+  --radius: 8px;
+  --content: min(1180px, calc(100vw - 40px));
+  --heading-font: 'DM Serif Display', Georgia, serif;
+  --body-font: 'Manrope', 'Avenir Next', Verdana, sans-serif;
+
+  font-family: var(--body-font);
+  color: var(--ink);
+  background: var(--paper-deep);
+  font-synthesis: none;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background:
+    radial-gradient(circle at 18% 12%, oklch(32% 0.098 37 / 42%), transparent 28rem),
+    radial-gradient(circle at 86% 7%, oklch(42% 0.075 198 / 34%), transparent 24rem),
+    linear-gradient(140deg, var(--paper-deep), var(--paper) 45%, oklch(12% 0.023 140));
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: '';
+  opacity: 0.38;
+  background-image:
+    linear-gradient(oklch(100% 0 0 / 5%) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(100% 0 0 / 5%) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: linear-gradient(to bottom, black, transparent 88%);
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  color: var(--paper-deep);
+  background: var(--amber);
+}
+
+:focus-visible {
+  outline: 3px solid var(--cyan);
+  outline-offset: 4px;
+}
+
+#root {
+  min-height: 100svh;
+}
